@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Untuk Kamu ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+body{overflow:hidden;min-height:100vh;background:linear-gradient(-45deg,#ff9a9e,#fad0c4,#fbc2eb,#a18cd1);background-size:400% 400%;animation:bg 12s ease infinite;color:#fff}
+@keyframes bg{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.loading{position:fixed;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#111;z-index:10}
+.heart{font-size:60px;animation:beat 1s infinite}
+@keyframes beat{50%{transform:scale(1.2)}}
+.bar{width:240px;height:10px;background:#333;border-radius:10px;overflow:hidden;margin-top:15px}
+.bar div{height:100%;width:0;background:#ff69b4;animation:load 3s forwards}
+@keyframes load{to{width:100%}}
+.main{display:none;min-height:100vh;justify-content:center;align-items:center;padding:20px}
+.card{max-width:760px;width:100%;background:rgba(255,255,255,.15);backdrop-filter:blur(15px);padding:30px;border-radius:30px;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,.25)}
+.avatar{width:120px;height:120px;border-radius:50%;margin:auto;background:rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:50px}
+button{padding:12px 24px;border:none;border-radius:999px;cursor:pointer;margin:8px}
+.open,.yes{background:#ff4f9a;color:#fff}
+.no{background:#fff;color:#ff4f9a;position:relative}
+#letter,#question,#result{display:none;margin-top:20px}
+.fall{position:fixed;top:-20px;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh);opacity:0}}
+</style>
+</head>
+<body>
+<div class="loading">
+<div class="heart">❤️</div>
+<h2>Preparing Something Special For You</h2>
+<div class="bar"><div></div></div>
+</div>
+
+<div class="main">
+<div class="card">
+<div class="avatar">💖</div>
+<h1>Ada Sesuatu Untuk Kamu ❤️</h1>
+<p>Tolong baca sampai selesai ya...</p>
+<button class="open" onclick="openLetter()">Buka Surat 💌</button>
+
+<div id="letter">
+<p id="typing"></p>
+</div>
+
+<div id="question">
+<h2>Maukah kamu menjadi seseorang yang spesial dalam hidupku? 💖</h2>
+<button class="yes" onclick="yesLove()">Iya ❤️</button>
+<button class="no" id="noBtn">Tidak 😅</button>
+</div>
+
+<div id="result"></div>
+</div>
+</div>
+
+<script>
+setTimeout(()=>{
+ document.querySelector('.loading').style.display='none';
+ document.querySelector('.main').style.display='flex';
+},3000);
+
+const text=`Halo...
+
+Aku ingin jujur tentang sesuatu.
+
+Sejak kita saling mengenal, aku selalu merasa senang saat berbicara denganmu.
+
+Senyummu membuat hariku lebih baik.
+
+Karena itu aku ingin mengatakan sesuatu yang sudah lama kusimpan.
+
+Aku menyukaimu ❤️`;
+
+function openLetter(){
+ document.getElementById('letter').style.display='block';
+ let i=0;
+ const t=setInterval(()=>{
+   document.getElementById('typing').textContent+=text[i]||'';
+   i++;
+   if(i>text.length){
+      clearInterval(t);
+      document.getElementById('question').style.display='block';
+   }
+ },35);
+}
+
+function yesLove(){
+ document.getElementById('result').style.display='block';
+ document.getElementById('result').innerHTML='<h2>Terima kasih sudah menerima perasaanku ❤️🥰</h2>';
+ for(let i=0;i<80;i++) rain();
+}
+
+function rain(){
+ const h=document.createElement('div');
+ h.className='fall';
+ h.innerHTML='❤️';
+ h.style.left=Math.random()*100+'vw';
+ h.style.fontSize=(15+Math.random()*25)+'px';
+ h.style.animationDuration=(2+Math.random()*4)+'s';
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),7000);
+}
+
+const no=document.getElementById('noBtn');
+no.addEventListener('mouseover',()=>{
+ no.style.transform=`translate(${Math.random()*250-125}px,${Math.random()*150-75}px)`;
+});
+</script>
+</body>
+</html>
