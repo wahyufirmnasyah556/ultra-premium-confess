@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+<title>🇮🇩 17 Agustus - Indonesia Merdeka</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#080808;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-3;
+    background:
+        radial-gradient(circle at 20% 20%,#450000 0%,transparent 30%),
+        radial-gradient(circle at 80% 80%,#250000 0%,transparent 30%),
+        linear-gradient(135deg,#050505,#130000,#050505);
+}
+
+.bg-light{
+    position:fixed;
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    filter:blur(80px);
+    background:#e00000;
+    opacity:.12;
+    top:15%;
+    left:-100px;
+    z-index:-2;
+}
+
+.bg-light2{
+    position:fixed;
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    filter:blur(80px);
+    background:#fff;
+    opacity:.05;
+    bottom:10%;
+    right:-100px;
+    z-index:-2;
+}
+
+/* NAVBAR */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:65px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 6%;
+    background:rgba(0,0,0,.8);
+    border-bottom:1px solid #222;
+    z-index:1000;
+}
+
+.logo{
+    font-size:20px;
+    font-weight:bold;
+}
+
+.logo b{
+    color:#ff1d2e;
+}
+
+.menu{
+    display:flex;
+    gap:22px;
+    list-style:none;
+}
+
+.menu a{
+    color:#aaa;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.menu a:hover{
+    color:#fff;
+}
+
+.nav-button{
+    border:1px solid #444;
+    background:#151515;
+    color:white;
+    padding:9px 15px;
+    border-radius:20px;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    padding:100px 20px 50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.hero-content{
+    width:100%;
+    max-width:850px;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 16px;
+    border:1px solid #6e1111;
+    border-radius:30px;
+    color:#ff5555;
+    background:#250909;
+    font-size:12px;
+    letter-spacing:1px;
+    margin-bottom:25px;
+}
+
+/* FLAG */
+
+.flag{
+    width:150px;
+    height:90px;
+    margin:0 auto 30px;
+    border-radius:5px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.5);
+    animation:wave 2s ease-in-out infinite;
+}
+
+.flag .red{
+    height:50%;
+    background:#e60012;
+}
+
+.flag .white{
+    height:50%;
+    background:#fff;
+}
+
+@keyframes wave{
+    0%,100%{
+        transform:rotate(-2deg);
+    }
+
+    50%{
+        transform:rotate(2deg);
+    }
+}
+
+.hero h1{
+    font-size:clamp(50px,12vw,105px);
+    line-height:.9;
+    font-weight:900;
+    letter-spacing:-4px;
+}
+
+.hero h1 span{
+    color:#ff1828;
+}
+
+.hero p{
+    max-width:620px;
+    margin:25px auto;
+    color:#999;
+    line-height:1.7;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    border:0;
+    padding:14px 23px;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:bold;
+    color:white;
+    background:#e60012;
+}
+
+.btn:active{
+    transform:scale(.96);
+}
+
+.btn.secondary{
+    background:#151515;
+    border:1px solid #333;
+}
+
+/* COUNTDOWN */
+
+.countdown{
+    margin-top:35px;
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.count{
+    width:90px;
+    padding:15px 5px;
+    background:#111;
+    border:1px solid #292929;
+    border-radius:16px;
+}
+
+.count strong{
+    display:block;
+    font-size:27px;
+}
+
+.count small{
+    color:#777;
+}
+
+/* SECTIONS */
+
+section{
+    padding:80px 6%;
+}
+
+.title{
+    text-align:center;
+    max-width:650px;
+    margin:0 auto 40px;
+}
+
+.title small{
+    color:#ff2b3b;
+    letter-spacing:2px;
+}
+
+.title h2{
+    font-size:clamp(30px,7vw,52px);
+    margin:10px 0;
+}
+
+.title p{
+    color:#888;
+    line-height:1.6;
+}
+
+/* CARDS */
+
+.cards{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.card{
+    background:#111;
+    border:1px solid #242424;
+    border-radius:20px;
+    padding:25px;
+    min-height:230px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    border-color:#7b1515;
+}
+
+.card-icon{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#888;
+    line-height:1.6;
+    font-size:14px;
+}
+
+/* TIMELINE */
+
+.timeline{
+    max-width:750px;
+    margin:auto;
+}
+
+.event{
+    display:flex;
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.event-number{
+    min-width:45px;
+    height:45px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    background:#e60012;
+    font-weight:bold;
+}
+
+.event-content{
+    border-bottom:1px solid #222;
+    padding-bottom:25px;
+    flex:1;
+}
+
+.event-content span{
+    color:#ff3030;
+    font-size:12px;
+}
+
+.event-content h3{
+    margin:7px 0;
+}
+
+.event-content p{
+    color:#888;
+    line-height:1.6;
+}
+
+/* QUOTE */
+
+.quote{
+    max-width:900px;
+    margin:auto;
+    padding:55px 25px;
+    text-align:center;
+    border-radius:25px;
+    background:#111;
+    border:1px solid #292929;
+}
+
+.quote h2{
+    font-size:clamp(28px,6vw,45px);
+    margin-bottom:15px;
+}
+
+.quote p{
+    color:#888;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+/* FOOTER */
+
+footer{
+    padding:40px 20px;
+    text-align:center;
+    color:#666;
+    border-top:1px solid #222;
+}
+
+footer b{
+    color:#e60012;
+}
+
+/* CONFETTI */
+
+.confetti{
+    position:fixed;
+    top:-20px;
+    width:8px;
+    height:13px;
+    z-index:2000;
+    pointer-events:none;
+    animation:fall 3.5s linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+    }
+}
+
+/* FIREWORK */
+
+.firework{
+    position:fixed;
+    width:5px;
+    height:5px;
+    border-radius:50%;
+    z-index:1900;
+    pointer-events:none;
+}
+
+.spark{
+    position:absolute;
+    width:4px;
+    height:4px;
+    background:#fff;
+    border-radius:50%;
+    animation:explode .8s linear forwards;
+}
+
+@keyframes explode{
+    from{
+        opacity:1;
+        transform:translate(0,0);
+    }
+
+    to{
+        opacity:0;
+        transform:translate(var(--x),var(--y));
+    }
+}
+
+/* TOAST */
+
+.toast{
+    position:fixed;
+    left:50%;
+    bottom:25px;
+    transform:translate(-50%,100px);
+    background:#151515;
+    border:1px solid #333;
+    padding:13px 20px;
+    border-radius:30px;
+    z-index:3000;
+    opacity:0;
+    transition:.3s;
+    white-space:nowrap;
+}
+
+.toast.show{
+    transform:translate(-50%,0);
+    opacity:1;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .menu{
+        display:none;
+    }
+
+    .cards{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:500px){
+
+    .navbar{
+        padding:0 4%;
+    }
+
+    .nav-button{
+        padding:8px 12px;
+        font-size:12px;
+    }
+
+    .hero{
+        padding-left:15px;
+        padding-right:15px;
+    }
+
+    .hero h1{
+        font-size:55px;
+    }
+
+    .flag{
+        width:130px;
+        height:78px;
+    }
+
+    .count{
+        width:70px;
+    }
+
+    .count strong{
+        font-size:22px;
+    }
+
+    section{
+        padding:65px 5%;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .event{
+        gap:12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg-light"></div>
+<div class="bg-light2"></div>
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        🇮🇩 INDO<b>NESIA</b>
+    </div>
+
+    <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#lomba">Lomba</a></li>
+        <li><a href="#sejarah">Sejarah</a></li>
+    </ul>
+
+    <button class="nav-button" onclick="rayakan()">
+        🎉 Rayakan
+    </button>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            🇮🇩 DIRGAHAYU REPUBLIK INDONESIA
+        </div>
+
+        <div class="flag">
+            <div class="red"></div>
+            <div class="white"></div>
+        </div>
+
+        <h1>
+            MERDEKA
+            <br>
+            <span>INDONESIA!</span>
+        </h1>
+
+        <p>
+            Rayakan semangat kemerdekaan dengan persatuan,
+            kebersamaan, gotong royong, dan semangat
+            untuk terus berkarya.
+        </p>
+
+        <div class="buttons">
+
+            <button class="btn" onclick="rayakan()">
+                🇮🇩 RAYAKAN SEKARANG
+            </button>
+
+            <button class="btn secondary" onclick="keLomba()">
+                Lihat Lomba ↓
+            </button>
+
+        </div>
+
+
+        <!-- COUNTDOWN -->
+
+        <div class="countdown">
+
+            <div class="count">
+                <strong id="hari">00</strong>
+                <small>Hari</small>
+            </div>
+
+            <div class="count">
+                <strong id="jam">00</strong>
+                <small>Jam</small>
+            </div>
+
+            <div class="count">
+                <strong id="menit">00</strong>
+                <small>Menit</small>
+            </div>
+
+            <div class="count">
+                <strong id="detik">00</strong>
+                <small>Detik</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LOMBA -->
+
+<section id="lomba">
+
+    <div class="title">
+
+        <small>SEMANGAT 17-AN</small>
+
+        <h2>
+            Lomba Kemerdekaan
+        </h2>
+
+        <p>
+            Keseruan sederhana yang selalu membuat
+            suasana 17 Agustus semakin meriah.
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-icon">🏃</div>
+
+            <h3>Balap Karung</h3>
+
+            <p>
+                Adu kecepatan dan keseimbangan
+                bersama teman-teman.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🍘</div>
+
+            <h3>Makan Kerupuk</h3>
+
+            <p>
+                Siapa yang paling cepat menghabiskan
+                kerupuk tanpa menggunakan tangan?
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🪢</div>
+
+            <h3>Tarik Tambang</h3>
+
+            <p>
+                Kerja sama dan kekompakan menjadi
+                kunci memenangkan pertandingan.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🎈</div>
+
+            <h3>Pecah Balon</h3>
+
+            <p>
+                Permainan seru untuk membuat
+                acara semakin meriah.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SEJARAH -->
+
+<section id="sejarah">
+
+    <div class="title">
+
+        <small>PERJALANAN BANGSA</small>
+
+        <h2>
+            Sejarah Singkat
+        </h2>
+
+        <p>
+            Beberapa momen penting dalam perjalanan
+            bangsa Indonesia.
+        </p>
+
+    </div>
+
+
+    <div class="timeline">
+
+        <div class="event">
+
+            <div class="event-number">
+                01
+            </div>
+
+            <div class="event-content">
+
+                <span>1928</span>
+
+                <h3>Sumpah Pemuda</h3>
+
+                <p>
+                    Para pemuda menyatakan semangat
+                    persatuan tanah air, bangsa,
+                    dan bahasa Indonesia.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="event">
+
+            <div class="event-number">
+                02
+            </div>
+
+            <div class="event-content">
+
+                <span>1945</span>
+
+                <h3>Proklamasi</h3>
+
+                <p>
+                    Indonesia memproklamasikan
+                    kemerdekaan pada 17 Agustus 1945.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="event">
+
+            <div class="event-number">
+                03
+            </div>
+
+            <div class="event-content">
+
+                <span>MASA KINI</span>
+
+                <h3>Terus Berkarya</h3>
+
+                <p>
+                    Generasi penerus memiliki peran
+                    menjaga persatuan dan membangun
+                    masa depan Indonesia.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PESAN -->
+
+<section>
+
+    <div class="quote">
+
+        <h2>
+            🇮🇩 Indonesia Hebat
+        </h2>
+
+        <p>
+            Kemerdekaan bukan hanya sebuah perayaan.
+            Mari menjaga persatuan, saling menghargai,
+            terus belajar, dan terus berkarya.
+        </p>
+
+        <button class="btn" onclick="semangat()">
+            ❤️ KIRIM SEMANGAT
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        Dibuat dengan ❤️ untuk
+        <b>Indonesia</b>
+    </p>
+
+    <br>
+
+    <p>
+        🇮🇩 MERDEKA • BERSATU • BERKARYA 🇮🇩
+    </p>
+
+</footer>
+
+
+<div class="toast" id="toast">
+    🇮🇩 MERDEKA!
+</div>
+
+
+<script>
+
+/* ==============================
+   COUNTDOWN
+============================== */
+
+function countdown(){
+
+    var sekarang = new Date();
+
+    var tahun = sekarang.getFullYear();
+
+    var target = new Date(
+        tahun,
+        7,
+        17,
+        0,
+        0,
+        0
+    );
+
+    if(sekarang > target){
+
+        target = new Date(
+            tahun + 1,
+            7,
+            17,
+            0,
+            0,
+            0
+        );
+
+    }
+
+    var selisih = target - sekarang;
+
+    var hari = Math.floor(
+        selisih / 86400000
+    );
+
+    var jam = Math.floor(
+        (selisih / 3600000) % 24
+    );
+
+    var menit = Math.floor(
+        (selisih / 60000) % 60
+    );
+
+    var detik = Math.floor(
+        (selisih / 1000) % 60
+    );
+
+    document.getElementById("hari").innerHTML =
+        String(hari).padStart(2,"0");
+
+    document.getElementById("jam").innerHTML =
+        String(jam).padStart(2,"0");
+
+    document.getElementById("menit").innerHTML =
+        String(menit).padStart(2,"0");
+
+    document.getElementById("detik").innerHTML =
+        String(detik).padStart(2,"0");
+}
+
+countdown();
+
+setInterval(countdown,1000);
+
+
+/* ==============================
+   SCROLL
+============================== */
+
+function keLomba(){
+
+    document.getElementById("lomba")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* ==============================
+   TOAST
+============================== */
+
+function toast(pesan){
+
+    var box =
+        document.getElementById("toast");
+
+    box.innerHTML = pesan;
+
+    box.classList.add("show");
+
+    setTimeout(function(){
+
+        box.classList.remove("show");
+
+    },2500);
+
+}
+
+
+/* ==============================
+   CONFETTI
+============================== */
+
+function confetti(){
+
+    for(var i=0;i<80;i++){
+
+        var c =
+            document.createElement("div");
+
+        c.className="confetti";
+
+        c.style.left =
+            Math.random()*100+"vw";
+
+        c.style.background =
+            Math.random()>0.5
+            ? "#e60012"
+            : "#ffffff";
+
+        c.style.animationDelay =
+            Math.random()+"s";
+
+        c.style.animationDuration =
+            (2.5+Math.random()*2)+"s";
+
+        document.body.appendChild(c);
+
+        setTimeout(function(){
+
+            c.remove();
+
+        },5000);
+
+    }
+
+}
+
+
+/* ==============================
+   FIREWORK
+============================== */
+
+function fireworks(x,y){
+
+    var parent =
+        document.createElement("div");
+
+    parent.className="firework";
+
+    parent.style.left=x+"px";
+    parent.style.top=y+"px";
+
+    document.body.appendChild(parent);
+
+    for(var i=0;i<30;i++){
+
+        var spark =
+            document.createElement("div");
+
+        spark.className="spark";
+
+        var angle =
+            (Math.PI*2*i)/30;
+
+        var distance =
+            40+Math.random()*80;
+
+        spark.style.setProperty(
+            "--x",
+            Math.cos(angle)*distance+"px"
+        );
+
+        spark.style.setProperty(
+            "--y",
+            Math.sin(angle)*distance+"px"
+        );
+
+        parent.appendChild(spark);
+
+    }
+
+    setTimeout(function(){
+
+        parent.remove();
+
+    },1000);
+
+}
+
+
+/* ==============================
+   RAYAKAN
+============================== */
+
+function rayakan(){
+
+    confetti();
+
+    toast("🇮🇩 MERDEKA! 🎉");
+
+    for(var i=0;i<5;i++){
+
+        setTimeout(function(){
+
+            fireworks(
+                Math.random()*window.innerWidth,
+                100+Math.random()*400
+            );
+
+        },i*350);
+
+    }
+
+}
+
+
+/* ==============================
+   SEMANGAT
+============================== */
+
+function semangat(){
+
+    var daftar=[
+        "🇮🇩 Semangat untuk Indonesia!",
+        "🔥 Terus berkarya!",
+        "💪 Pantang menyerah!",
+        "❤️ Jaga persatuan!",
+        "🇮🇩 Indonesia Hebat!"
+    ];
+
+    var pesan =
+        daftar[
+            Math.floor(
+                Math.random()*daftar.length
+            )
+        ];
+
+    toast(pesan);
+
+    confetti();
+
+}
+
+
+/* ==============================
+   KLIK LAYAR
+============================== */
+
+document.addEventListener(
+    "dblclick",
+    function(e){
+
+        fireworks(
+            e.clientX,
+            e.clientY
+        );
+
+    }
+);
+
+</script>
+
+</body>
+</html>
